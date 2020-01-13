@@ -1,0 +1,224 @@
+html,
+body {
+  background: #8caab7;
+}
+
+.today-weather-section .grid-container.fluid {
+  border-radius: 25px;
+  background-color: #ff736c;
+  padding: 1rem;
+}
+
+@media print, screen and (min-width: 40em) {
+  .today-weather-section {
+    padding: 2rem;
+  }
+}
+
+.search-field-column {
+  border-radius: 25px;
+  background: #1d1d2d;
+  padding-right: 25px;
+}
+.search-field-column input {
+    margin: 10px;
+}
+.search-field-column p {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-left: 10px;
+}
+
+.today-weather-section-main-header {
+  font-weight: 700;
+}
+
+@media screen and (max-width: 63.9375em) {
+  .today-weather-section-main-header {
+    font-size: 30px;
+  } 
+}
+
+.today-weather-section-sub-header {
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 63.9375em) {
+  .today-weather-section-sub-header {
+    font-size: 24px;
+  }
+}
+
+.today-weather-section-features {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.today-weather-section-features-block {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 1rem 0;
+  -webkit-flex: 1 0 33.33%;
+  -ms-flex: 1 0 33.33%;
+  flex: 1 0 33.33%;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.today-weather-section-features-block .fas {
+  margin-right: 5px;
+  font-size: 35px;
+}
+
+.today-weather-section-main-header .fas {
+  margin-right: 5px;
+  font-size: 50px;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .today-weather-section-features-block {
+    -webkit-flex: 1 0 50%;
+    -ms-flex: 1 0 50%;
+    flex: 1 0 50%;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 25.9375em) {
+  .today-weather-section-features-block {
+    -webkit-flex: 1 0 100%;
+    -ms-flex: 1 0 100%;
+    flex: 1 0 100%;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
+.flip-card {
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  border: 0;
+  background: transparent;
+  padding: 10px;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card.hover .flip-card-inner {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.flip-card,
+.flip-card-inner-front,
+.flip-card-inner-back {
+  width: 100%;
+  height: 20rem;
+}
+
+.flip-card-inner {
+  transition: 0.5s;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: relative;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-inner-front,
+.flip-card-inner-back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.flip-card-inner-front {
+  /* background: url(https://images.pexels.com/photos/179124/pexels-photo-179124.jpeg?w=940&h=650&auto=compress&cs=tinysrg) 0 0 no-repeat; */
+  border-radius: 25px;
+  background: #1d1d2d;
+  z-index: 2;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.flip-card-inner-front span {
+  width: 100%;
+  text-align: center;
+  background: rgba(254, 254, 254, 0.8);
+  padding: 0.25rem 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.flip-card-inner-back {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  background: #ff736c;
+  padding: 1rem;
+}
+
+.flip-card-inner-back-title {
+  font-weight: bold;
+}
+
+.flip-card-inner-back-text {
+  line-height: 1.3;
+}
+
+.animated-search-form[type="search"] {
+  width: 10rem;
+  border: 0.125rem solid #e6e6e6;
+  box-shadow: 0 0 3.125rem rgba(0, 0, 0, 0.18);
+  border-radius: 25px;
+  background-image: url("//image.ibb.co/i7NbrQ/search_icon_15.png");
+  background-position: 0.625rem 0.625rem;
+  background-repeat: no-repeat;
+  padding: 0.75rem 1.25rem 0.75rem 2rem;
+  transition: width 0.4s ease-in-out;
+}
+
+.animated-search-form[type="search"]:focus {
+  border-radius: 25px;
+  width: 100%;
+}
+
+.button.button-icon-badge {
+  border-radius: 25px;
+  width:33.33%;
+}

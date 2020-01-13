@@ -14,6 +14,11 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <script
+      src="https://kit.fontawesome.com/135e9f924d.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="grid-container fluid align-center-middle text-center">
@@ -24,14 +29,223 @@
         </div>
       </div>
     </div>
-    <div class="grid-container fluid align-center-middle text-center">
-      <div class="grid-x">
-        <div class="cell small-4">
-          <h1>Search Placeholder</h1>
+    <!-- SECTION THAT HOLDS TODAY'S WEATHER -->
+    <section class="today-weather-section">
+      <div class="row align-middle">
+        <div class="grid-x grid-container fluid align-center-middle">
+         
+          <div class="cell small-3 search-field-column">
+             <!-- ****************************************
+            SEARCH FIELD AREA
+            THE SEARCH BUTTON EXPANDS WHEN SELECTED
+            5 RECENT SEARCHES/POPULAR SEARCHES ARE APPENDED BELOW THE SEARCH FIELD
+         ************************************************** -->
+            <input
+              type="search"
+              name="search"
+              placeholder="Search.."
+              class="animated-search-form"
+            />
+            <p>
+              <a href="#" class="button button-icon-badge">
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="button-icon-badge-text">Search 1</span>
+              </a>
+            </p>
+            <p>
+              <a href="#" class="button button-icon-badge">
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="button-icon-badge-text">Search 2</span>
+              </a>
+            </p>
+            <p>
+              <a href="#" class="button button-icon-badge">
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="button-icon-badge-text">Search 3</span>
+              </a>
+            </p>
+            <p>
+              <a href="#" class="button button-icon-badge">
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="button-icon-badge-text">Search 4</span>
+              </a>
+            </p>
+            <p>
+              <a href="#" class="button button-icon-badge">
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="button-icon-badge-text">Search 5</span>
+              </a>
+            </p>
+          </div>
+          <div class="cell small-1">
+            <!-- SPACER COLUMN -- REPLACE WITH OFFSETS IN FUTURE UPDATE -->
+          </div>
+          <div class="cell small-8">
+
+            <!-- TODAY'S WEATHER INFORMATION  -->
+            <div class="small-12 medium-9 columns">
+
+              <!-- TODAY'S DATE -->
+              <h4 class="today-weather-section-sub-header">TODAY'S DATE</h4>
+
+              <!-- CURRENT WEATHER CONDITIONS -->
+              <h3 class="today-weather-section-main-header">
+                <i class="fas fa-umbrella-beach"></i>CURRENT WEATHER
+              </h3>
+
+              <!-- SEARCHED CITY -->
+              <div class="today-weather-section-features">
+                <div class="today-weather-section-features-block">
+                  <i class="fas fa-map-marked-alt"></i>
+                  <span id="city">CITY</span>
+                </div>
+
+                <!-- CURRENT TEMP -->
+                <div class="today-weather-section-features-block">
+                  <i class="fas fa-thermometer-half"></i>
+                  <span id="currentTemp">CURRENT TEMP</span>
+                </div>
+
+                <!-- HIGH TEMP TODAY -->
+                <div class="today-weather-section-features-block">
+                  <i class="fas fa-temperature-high"></i>
+                  <span id="highTemp">HIGH TEMP</span>
+                </div>
+
+                <!-- CURRENT WIND SPEED -->
+                <div class="today-weather-section-features-block">
+                  <i class="fas fa-wind"></i> <span id="wind">WIND</span>
+                </div>
+
+                <!-- CURRENT HUMIDITY -->
+                <div class="today-weather-section-features-block">
+                  <i class="fas fa-tint"></i>
+                  <span id="humidity">HUMIDITY</span>
+                </div>
+
+                <!-- CURRENT UV INDEX -->
+                <div class="today-weather-section-features-block">
+                  <i class="fas fa-sun"></i> <span id="uvIndex">UV INDEX</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="cell small-8"><h1>Weather Display Placeholder</h1></div>
       </div>
-    </div>
+    </section>
+    <section class="forecast-weather-section">
+      <!-- HOLDS 5-DAY FORECAST -->
+
+      <!-- CARDS ARE FLIPPED AND ANIMATED USING TRANSFORM/WEBKIT TRANSFORM. BASE FUNCTIONALITY IS PART OF FOUNDATION -->
+      <div class="row align-middle">
+        <div class="grid-x grid-container fluid align-center-middle">
+          <div class="cell small-2">
+            <div
+              class="flip-card card"
+              ontouchstart="this.classList.toggle('hover');"
+            >
+              <div class="flip-card-inner">
+                <div class="flip-card-inner-front">
+                  <span id="day1">TOMORROW'S DATE</span>
+                </div>
+                <div class="flip-card-inner-back">
+                  <h3 class="flip-card-inner-back-title">TOMORROW'S DATE</h3>
+                  <i class="fas fa-temperature-high"></i>
+                  <p class="flip-card-inner-back-text">High Temp</p>
+                  <i class="fas fa-temperature-low"></i>
+                  <p class="flip-card-inner-back-text">Low Temp</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cell small-2">
+            <div
+              class="flip-card card"
+              ontouchstart="this.classList.toggle('hover');"
+            >
+              <div class="flip-card-inner">
+                <div class="flip-card-inner-front">
+                  <span id="day2">THE DAY AFTER'S DATE</span>
+                </div>
+                <div class="flip-card-inner-back">
+                  <h3 class="flip-card-inner-back-title">
+                    THE DAY AFTER'S DATE
+                  </h3>
+                  <i class="fas fa-temperature-high"></i>
+                  <p class="flip-card-inner-back-text">High Temp</p>
+                  <i class="fas fa-temperature-low"></i>
+                  <p class="flip-card-inner-back-text">Low Temp</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cell small-2">
+            <div
+              class="flip-card card"
+              ontouchstart="this.classList.toggle('hover');"
+            >
+              <div class="flip-card-inner">
+                <div class="flip-card-inner-front">
+                  <span id="day3">THE DAY AFTER'S DATE</span>
+                </div>
+                <div class="flip-card-inner-back">
+                  <h3 class="flip-card-inner-back-title">
+                    THE DAY AFTER'S DATE
+                  </h3>
+                  <i class="fas fa-temperature-high"></i>
+                  <p class="flip-card-inner-back-text">High Temp</p>
+                  <i class="fas fa-temperature-low"></i>
+                  <p class="flip-card-inner-back-text">Low Temp</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cell small-2">
+            <div
+              class="flip-card card"
+              ontouchstart="this.classList.toggle('hover');"
+            >
+              <div class="flip-card-inner">
+                <div class="flip-card-inner-front">
+                  <span id="day4">THE DAY AFTER'S DATE</span>
+                </div>
+                <div class="flip-card-inner-back">
+                  <h3 class="flip-card-inner-back-title">
+                    THE DAY AFTER'S DATE
+                  </h3>
+                  <i class="fas fa-temperature-high"></i>
+                  <p class="flip-card-inner-back-text">High Temp</p>
+                  <i class="fas fa-temperature-low"></i>
+                  <p class="flip-card-inner-back-text">Low Temp</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cell small-2">
+            <div
+              class="flip-card card"
+              ontouchstart="this.classList.toggle('hover');"
+            >
+              <div class="flip-card-inner">
+                <div class="flip-card-inner-front">
+                  <span id="day5">THE DAY AFTER'S DATE</span>
+                </div>
+                <div class="flip-card-inner-back">
+                  <h3 class="flip-card-inner-back-title">
+                    THE DAY AFTER'S DATE
+                  </h3>
+                  <i class="fas fa-temperature-high"></i>
+                  <p class="flip-card-inner-back-text">High Temp</p>
+                  <i class="fas fa-temperature-low"></i>
+                  <p class="flip-card-inner-back-text">Low Temp</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- JQuery JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
 
