@@ -6,7 +6,9 @@ This is a simple app designed to allow users to quickly and easily find the curr
 
 ## Libraries, Frameworks, and APIs
 
-* Bootstrap - Used for mobile responsiveness, accessibility, and basic page layout
+* ~~Bootstrap - Used for mobile responsiveness, accessibility, and basic page layout~~
+* Foundation - Used for mobile responsiveness, accessibility, and page layout
+    * Foundation is used over Bootstrap because components are more portable and it is easier to include only what's needed vs. a whole framework.
 * JQuery - Used for DOM querying and dynamic content insertion
 * OpenWeatherMap - Weather API used for current weather data and forecasts
 
