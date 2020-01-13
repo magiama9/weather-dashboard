@@ -176,6 +176,7 @@ body {
 .flip-card-inner-back {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
+  border-radius: 25px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
