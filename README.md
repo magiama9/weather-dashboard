@@ -10,15 +10,16 @@ This is a simple app designed to allow users to quickly and easily find the curr
 * Foundation - Used for mobile responsiveness, accessibility, and page layout
     * Foundation is used over Bootstrap because components are more portable and it is easier to include only what's needed vs. a whole framework.
 * JQuery - Used for DOM querying and dynamic content insertion
+* Moment - Used for setting and manipulating dates
 * OpenWeatherMap - Weather API used for current weather data and forecasts
 
 ## TO-DO
 
-* Initial implementation
-* Implement Search
-* Implement Current Conditions
-* Implement Forecast
+* ~~Initial implementation~~
+* ~~Implement Search~~
+* ~~Implement Current Conditions~~
+* ~~Implement Forecast~~
 * Implement Local Storage
-* Implement Icons for Weather Conditions
-* Style Page
-* Add responsive behavior
+* ~~Implement Icons for Weather Conditions~~
+* ~~Style Page~~
+* ~~Add responsive behavior~~
