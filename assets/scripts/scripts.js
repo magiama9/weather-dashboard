@@ -109,7 +109,6 @@ $(document).ready(function() {
   //   FETCHES CURRENT TIME AS A MOMENT OBJECT OF GIVEN FORMAT
   function setTime() {
     currentDate = moment().format("dddd, MMMM Do, YYYY");
-    console.log(currentDate);
   }
 
   //   UPDATES CURRENT TIME DISPLAY
@@ -167,7 +166,7 @@ $(document).ready(function() {
   // Fetches the user search value, updates current city, and clears out the search field.
   function getUserSearch() {
     let userSearch = $("#searchField").val();
-    $("#searchField").text("");
+    $("#searchField").val("");
     currentCity = userSearch;
   }
 
@@ -240,13 +239,13 @@ $(document).ready(function() {
 
   //  EVENT HANDLER FOR CLICKING ON A BUTTON. IF THE USER CLICKS ON THE ICON, THE EVENT IS DELEGATED/BUBBLED(NOT SURE RE: TERMINOLOGY) UP TO THE BUTTON ITSELF
   $("a.button.button-icon-badge").on("click", function(e) {
-    console.log("You clicked a button");
+   
     let btnTarget;
     if ($(e.target).text()) {
       btnTarget = $(e.target)
         .text()
         .trim();
-      console.log(btnTarget);
+      
     } else if (!$(e.target).text()) {
       btnTarget = $(e.delegateTarget)
         .text()
