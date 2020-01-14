@@ -3,36 +3,70 @@ body {
   background: #8caab7;
 }
 
+/* BACKGROUND AND PADDING FOR MAIN CONTENT AREA */
 .today-weather-section .grid-container.fluid {
   border-radius: 25px;
   background-color: #ff736c;
   padding: 1rem;
 }
 
+/* PADDING FOR FORECAST AREA */
 .forecast-weather-section .grid-container.fluid {
-    padding: 1rem;
-  }
-  
+  padding: 1rem;
+}
+
 @media print, screen and (min-width: 40em) {
   .today-weather-section {
     padding: 2rem;
   }
 }
 
+/* SEARCH FIELD STYLING */
+/* ******************** */
 .search-field-column {
   border-radius: 25px;
   background: #1d1d2d;
   padding-right: 25px;
 }
 .search-field-column input {
-    margin: 10px;
+  margin: 10px;
 }
 .search-field-column p {
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    padding-left: 10px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  padding-left: 10px;
 }
 
+/* SEARCH BAR ANIMATION */
+/* ******************** */
+.animated-search-form[type="search"] {
+  width: 10rem;
+  border: 0.125rem solid #e6e6e6;
+  box-shadow: 0 0 3.125rem rgba(0, 0, 0, 0.18);
+  border-radius: 25px;
+  background-image: url("//image.ibb.co/i7NbrQ/search_icon_15.png");
+  background-position: 0.625rem 0.625rem;
+  background-repeat: no-repeat;
+  padding: 0.75rem 1.25rem 0.75rem 2rem;
+  transition: width 0.4s ease-in-out;
+}
+
+.animated-search-form[type="search"]:focus {
+  border-radius: 25px;
+  width: 100%;
+}
+/* ******************** */
+
+/* SEARCH BUTTON STYLING */
+.button.button-icon-badge {
+  border-radius: 25px;
+  width: 33.33%;
+}
+
+/* ******************** */
+
+/* MAIN SECTION STYLING */
+/* ******************** */
 .today-weather-section-main-header {
   font-weight: 700;
 }
@@ -40,7 +74,7 @@ body {
 @media screen and (max-width: 63.9375em) {
   .today-weather-section-main-header {
     font-size: 30px;
-  } 
+  }
 }
 
 .today-weather-section-sub-header {
@@ -112,7 +146,10 @@ body {
     justify-content: center;
   }
 }
+/* ******************** */
 
+/* FORECAST AREA CARD STYLING AND ANIMATION */
+/* **************************************** */
 .flip-card {
   -webkit-perspective: 1000;
   perspective: 1000;
@@ -205,25 +242,4 @@ body {
 .flip-card-inner-back-text {
   line-height: 1.3;
 }
-
-.animated-search-form[type="search"] {
-  width: 10rem;
-  border: 0.125rem solid #e6e6e6;
-  box-shadow: 0 0 3.125rem rgba(0, 0, 0, 0.18);
-  border-radius: 25px;
-  background-image: url("//image.ibb.co/i7NbrQ/search_icon_15.png");
-  background-position: 0.625rem 0.625rem;
-  background-repeat: no-repeat;
-  padding: 0.75rem 1.25rem 0.75rem 2rem;
-  transition: width 0.4s ease-in-out;
-}
-
-.animated-search-form[type="search"]:focus {
-  border-radius: 25px;
-  width: 100%;
-}
-
-.button.button-icon-badge {
-  border-radius: 25px;
-  width:33.33%;
-}
+/* **************************************** */
