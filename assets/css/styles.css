@@ -9,6 +9,10 @@ body {
   padding: 1rem;
 }
 
+.forecast-weather-section .grid-container.fluid {
+    padding: 1rem;
+  }
+  
 @media print, screen and (min-width: 40em) {
   .today-weather-section {
     padding: 2rem;
