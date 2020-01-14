@@ -12,6 +12,7 @@ let currentWindSpeed;
 let currentDescription;
 let currentLat = "";
 let currentLon = "";
+let currentIconCode;
 let forecastMaxTemp = [];
 let forecastMinTemp = [];
 
@@ -44,6 +45,7 @@ $(document).ready(function() {
         currentDescription = response.weather[0].main;
         currentLat = response.coord.lat;
         currentLon = response.coord.lon;
+        currentIconCode = response.weather[0].icon;
         getUV();
         displayCurrentConditions();
         getForecast();
@@ -124,6 +126,7 @@ $(document).ready(function() {
     displayCurrentHigh();
     displayHumidity();
     displayCurrentDescription();
+    getIcon();
   }
 
   //   DISPLAYS CURRENT CITY IN UPPERCASE
@@ -239,13 +242,11 @@ $(document).ready(function() {
 
   //  EVENT HANDLER FOR CLICKING ON A BUTTON. IF THE USER CLICKS ON THE ICON, THE EVENT IS DELEGATED/BUBBLED(NOT SURE RE: TERMINOLOGY) UP TO THE BUTTON ITSELF
   $("a.button.button-icon-badge").on("click", function(e) {
-   
     let btnTarget;
     if ($(e.target).text()) {
       btnTarget = $(e.target)
         .text()
         .trim();
-      
     } else if (!$(e.target).text()) {
       btnTarget = $(e.delegateTarget)
         .text()
@@ -258,4 +259,11 @@ $(document).ready(function() {
     getForecast();
     displayForecast();
   });
+
+  function getIcon() {
+    let iconURL =
+      "https://openweathermap.org/img/w/" + currentIconCode + ".png";
+    console.log(currentIconCode);
+    $("#currentIcon").attr("src", iconURL);
+  }
 });

@@ -67,6 +67,11 @@ body {
 
 /* MAIN SECTION STYLING */
 /* ******************** */
+
+#currentIcon {
+  width: 75px;
+  height: 75px;
+}
 .today-weather-section-main-header {
   font-weight: 700;
 }
