@@ -78,6 +78,8 @@ $(document).ready(function() {
   //   MAKES SEPARATE CALL TO OPENWEATHER API TO FETCH 5 DAY FORECAST
   //   PUSHES THOSE VALUES TO THE ARRAY
   function getForecast() {
+    forecastMinTemp = [];
+    forecastMaxTemp = [];
     $.ajax({
       url: forecastURL,
       method: "GET",
@@ -171,35 +173,45 @@ $(document).ready(function() {
 
   // FUNCTIONS TO DISPLAY EACH DAY'S FORECAST WEATHER. CALLED IN displayForecast();
   function displayDay1Weather() {
-    let dayDate = moment().add(1, "days").format("MMMM Do");
+    let dayDate = moment()
+      .add(1, "days")
+      .format("MMMM Do");
     $("#day1").text(dayDate);
     $("#day1Date").text(dayDate);
     $("#day1High").text("High Temp: " + forecastMaxTemp[0] + "\u00B0");
     $("#day1Low").text("Low Temp: " + forecastMinTemp[0] + "\u00B0");
   }
   function displayDay2Weather() {
-    let dayDate = moment().add(2, "days").format("MMMM Do");
+    let dayDate = moment()
+      .add(2, "days")
+      .format("MMMM Do");
     $("#day2").text(dayDate);
     $("#day2Date").text(dayDate);
     $("#day2High").text("High Temp: " + forecastMaxTemp[1] + "\u00B0");
     $("#day2Low").text("Low Temp: " + forecastMinTemp[1] + "\u00B0");
   }
   function displayDay3Weather() {
-    let dayDate = moment().add(3, "days").format("MMMM Do");
+    let dayDate = moment()
+      .add(3, "days")
+      .format("MMMM Do");
     $("#day3").text(dayDate);
     $("#day3Date").text(dayDate);
     $("#day3High").text("High Temp: " + forecastMaxTemp[2] + "\u00B0");
     $("#day3Low").text("Low Temp: " + forecastMinTemp[2] + "\u00B0");
   }
   function displayDay4Weather() {
-    let dayDate = moment().add(4, "days").format("MMMM Do");
+    let dayDate = moment()
+      .add(4, "days")
+      .format("MMMM Do");
     $("#day4").text(dayDate);
     $("#day4Date").text(dayDate);
     $("#day4High").text("High Temp: " + forecastMaxTemp[3] + "\u00B0");
     $("#day4Low").text("Low Temp: " + forecastMinTemp[3] + "\u00B0");
   }
   function displayDay5Weather() {
-    let dayDate = moment().add(5, "days").format("MMMM Do");
+    let dayDate = moment()
+      .add(5, "days")
+      .format("MMMM Do");
     $("#day5").text(dayDate);
     $("#day5Date").text(dayDate);
     $("#day5High").text("High Temp: " + forecastMaxTemp[4] + "\u00B0");
@@ -221,24 +233,30 @@ $(document).ready(function() {
       getUserSearch();
       displayCity();
       getCurrentConditions();
+      getForecast();
+      displayForecast();
     }
   });
 
   //  EVENT HANDLER FOR CLICKING ON A BUTTON. IF THE USER CLICKS ON THE ICON, THE EVENT IS DELEGATED/BUBBLED(NOT SURE RE: TERMINOLOGY) UP TO THE BUTTON ITSELF
   $("a.button.button-icon-badge").on("click", function(e) {
     console.log("You clicked a button");
-
+    let btnTarget;
     if ($(e.target).text()) {
-      let btnTarget = $(e.target)
+      btnTarget = $(e.target)
         .text()
         .trim();
       console.log(btnTarget);
     } else if (!$(e.target).text()) {
-      console.log(
-        $(e.delegateTarget)
-          .text()
-          .trim()
-      );
+      btnTarget = $(e.delegateTarget)
+        .text()
+        .trim();
     }
+
+    currentCity = btnTarget;
+    displayCity();
+    getCurrentConditions();
+    getForecast();
+    displayForecast();
   });
 });
